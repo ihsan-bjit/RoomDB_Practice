@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/viewTodoFragment">
+
+    <fragment
+        android:id="@+id/viewTodoFragment"
+        android:name="com.ihsan.roomdb_practice.ui.ViewTodoFragment"
+        android:label="fragment_view_todo"
+        tools:layout="@layout/fragment_view_todo" >
+        <action
+            android:id="@+id/action_viewTodoFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_viewTodoFragment_to_updateFragment"
+            app:destination="@id/updateFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_viewTodoFragment_to_attachmentFragment"
+            app:destination="@id/attachmentFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTaskFragment"
+        android:name="com.ihsan.roomdb_practice.ui.AddTaskFragment"
+        android:label="fragment_add_task"
+        tools:layout="@layout/fragment_add_task" >
+        <action
+            android:id="@+id/action_addTaskFragment_to_viewTodoFragment"
+            app:destination="@id/viewTodoFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.ihsan.roomdb_practice.ui.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_viewTodoFragment"
+            app:destination="@id/viewTodoFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <argument
+            android:name="todo"
+            app:argType="com.ihsan.roomdb_practice.model.Todo"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/attachmentFragment"
+        android:name="com.ihsan.roomdb_practice.ui.AttachmentFragment"
+        android:label="fragment_attachment"
+        tools:layout="@layout/fragment_attachment" >
+        <action
+            android:id="@+id/action_attachmentFragment_to_viewTodoFragment"
+            app:destination="@id/viewTodoFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <argument
+            android:name="todo"
+            app:argType="com.ihsan.roomdb_practice.model.Todo"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>
